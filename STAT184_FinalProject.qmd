@@ -6,5 +6,4 @@ editor: visual
 
 ## 
 
-data <- read.csv("Downloads/COLLEGEFOOTBALLDATA/csb13.csv")
 
