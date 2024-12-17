@@ -24,7 +24,7 @@ Even in looking at our data pool from the most recent championship season of 202
 
 # FAIR AND CARE PRINICIPLES
 
-In looking at how our data correlate with the FAIR and CARE principles, we can first look at how the data was accessed.  FAIR principles state that the data must be easy for anyone to find, and can be reused by anyone who wishes to do the same data analysis that we are currently doing.  In this way, our data is extremely accessible.  We easily got our college football data from Kaggle, who made it incredibly easy to download and analyze the statistics.  
+In lookking at how our data correlate with the FAIR and CARE principles, we can first look at how the data was accessed.  FAIR principles state that the data must be easy for anyone to find, and can be reused by anyone who wishes to do the same data analysis that we are currently doing.  In this way, our data is extremely accessible.  We easily got our college football data from Kaggle, who made it incredibly easy to download and analyze the statistics.  
 
 Additionally, the CARE principles say that there must be some form of ethics in the way that the data was collected to be shared.  To our knowledge, there has been nothing wrong with anything regarding data format and collection mechanisms, making it a very strong candidate for our data analysis.
 
