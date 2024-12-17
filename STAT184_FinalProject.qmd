@@ -4,24 +4,91 @@ format: html
 editor: visual
 ---
 
-## 
-install.packages("dplyr")
-install.packages("ggplot2")
-library(readr)
-datasets <- list(
-cfb13 <- read_csv("COLLEGEFOOTBALLDATA/cfb13.csv"),
-cfb14 <- read_csv("COLLEGEFOOTBALLDATA/cfb14.csv"),
-cfb15 <- read_csv("COLLEGEFOOTBALLDATA/cfb15.csv"),
-cfb16 <- read_csv("COLLEGEFOOTBALLDATA/cfb16.csv"),
-cfb17 <- read_csv("COLLEGEFOOTBALLDATA/cfb17.csv"),
-cfb18 <- read_csv("COLLEGEFOOTBALLDATA/cfb18.csv"),
-cfb19 <- read_csv("COLLEGEFOOTBALLDATA/cfb19.csv"),
-cfb20 <- read_csv("COLLEGEFOOTBALLDATA/cfb20.csv")
-)
-library(dplyr)
+```{r}
+data2013 <- read.csv("/Users/drewlippert/Downloads/COLLEGEFOOTBALLDATA/cfb13.csv")
+
+model1 <- lm(Win ~ Pass.Yards + Pass.Yards.Per.Game + Pass.Touchdowns + Rush.Yds + Rushing.Yards.per.Game + Rushing.TD + Avg.Points.per.Game.Allowed + Opp.Pass.TDs.Allowed + Opp.Rush.Touchdowns.Allowed, data = data2013)
+summary(model1)
+```
+
+```{r}
+data2020 <- read.csv("/Users/drewlippert/Downloads/COLLEGEFOOTBALLDATA/cfb20.csv")
+```
+
+```{r}
 library(ggplot2)
-ggplot(cfb13, aes(x = Off.Yards, y = Win)) + geom_point() + labs (title = "Offensive Yards vs Total Wins", x = "offensive yards", y = "total wins") + theme_classic() + scale_x_continuous(limits = c(2000, 9000)) + scale_y_continuous(limits = c(0,13)) 
-ggplot(cfb20, aes(x = Off.Yards, y = Win)) + geom_point() + labs (title = "Offensive Yards vs Total Wins", x = "offensive yards", y = "total wins") + theme_classic() + scale_x_continuous(limits = c(2000, 9000)) + scale_y_continuous(limits = c(0,13)) 
+
+ggplot(data = data2013, aes(x = Off.Yards.per.Game, y = Win)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = F, color = "green") +
+  labs(
+    x = "Average Offensive Yards Per Game",
+    y = "Wins",
+    title = "Average Offensive Yards Per Game by Wins in 2013"
+    ) +
+  theme_minimal()
+```
+
+```{r}
+library(ggplot2)
+
+ggplot(data = data2013, aes(x = Def.Rank, y = Win)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = F, color = "aquamarine") +
+  labs(
+    x = "Defensive Rank",
+    y = "Wins",
+    title = "Defensive Rank by Wins in 2013"
+    ) +
+  theme_minimal()
+```
+
+```{r}
+library(ggplot2)
+
+ggplot(data = data2023, aes(x = Def.Rank, y = Win.Loss)) +
+  geom_point() +
+  labs(
+    x = "Defensive Rank",
+    y = "Wins-Losses",
+    title = "Defensive Rank by Wins in 2013"
+    ) +
+  theme_minimal()
+```
+
+```{r}
+library(readr)
+library(ggplot2)
+library(dplyr)
+
+# Combine both datasets, adding a column for the season
+data2013$Season <- "2013"
+data2020$Season <- "2020"
+cfb_combined <- rbind(data2013 %>% select(Team, Yards.Allowed, Points.Allowed, Season),
+                      data2020 %>% select(Team, Yards.Allowed, Points.Allowed, Season))
+
+# 1. Scatter Plot: Yards Allowed vs Points Allowed
+ggplot(cfb_combined, aes(x = Yards.Allowed, y = Points.Allowed, color = Season)) +
+  geom_point(alpha = 0.7) +
+  labs(title = "Yards Allowed vs Points Allowed",
+       x = "Yards Allowed",
+       y = "Points Allowed",
+       color = "Season") +
+  theme_minimal()
+
+# 2. Box Plot: Points Allowed for High vs Low Yards Allowed
+cfb_combined <- cfb_combined %>%
+  group_by(Season) %>%
+  mutate(Yards.Group = ifelse(Yards.Allowed > median(Yards.Allowed), "High Yards Allowed", "Low Yards Allowed"))
+
+ggplot(cfb_combined, aes(x = Yards.Group, y = Points.Allowed, fill = Season)) +
+  geom_boxplot() +
+  labs(title = "Points Allowed by Yards Allowed Group",
+       x = "Yards Allowed Group",
+       y = "Points Allowed",
+       fill = "Season") +
+  theme_minimal()
+```
 
 
 
