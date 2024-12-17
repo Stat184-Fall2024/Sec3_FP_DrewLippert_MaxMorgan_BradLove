@@ -91,7 +91,7 @@ ggplot(data = data2023, aes(x = Off.Yards.per.Game, y = Win.Loss)) +
 
 ## First Analysis (Offense)
 
-In looking at these similar graphs, we see that we are analyzing a team’s success based on offensive yards.  At first glance, it is very evident that, while there is obviously a positive correlation between wins and offensive efficiency, we see that, in 2011, offense played a larger role in these victories.  In comparison, 2023 saw a significant decrease in relationship between the two variables.  We can conclude, based on these figures, that offense played less of a role in obtaining the same number of wins in 2023 than it did in 2011.  
+In looking at these similar graphs, we see that we are analyzing a team’s success based on offensive yards.  At first glance, it is very evident that, while there is obviously a positive correlation between wins and offensive efficiency, we see that, in 2011, offense played a larger role in these victories.  In comparison, 2023 saw a significant decrease in relationship between the two variables.  We can conclude, based on these figures, that offense played less of a role in obtaining the same number of wins in 2023 than it did in 2011.  Additionally, in looking at our data from 2013, two of the four teams, Florida State and Auburn, that played in the College Football Playoff of that year were in the top 12 in total offensive rank, further highlighting the domination that offense played in important games throughout the season and led to more success in the form of championships and playoffs.
 
 
 ```{r}
