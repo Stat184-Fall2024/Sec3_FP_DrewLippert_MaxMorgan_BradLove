@@ -42,12 +42,6 @@ Touchdowns Allowed
 
 In analyzing these metrics and comparing them to different years, we will be able to see how these statistics changed over time. 
 
-GRAPHS
-
-2013 
-
-2020
-
 # ANALYSIS 
 
 In looking at these similar graphs, we see that we are analyzing a team’s success based on offensive yards.  At first glance, it is very evident that, while there is obviously a positive correlation between wins and offensive efficiency, we see that, in 2011, offense played a larger role in these victories.  In comparison, 2023 saw a significant decrease in relationship between the two variables.  We can conclude, based on these figures, that offense played less of a role in obtaining the same number of wins in 2023 than it did in 2011.  
@@ -55,17 +49,6 @@ In looking at these similar graphs, we see that we are analyzing a team’s succ
 # LINEAR REGRESSION
 
 In this portion of our analysis, we completed linear regression models for offensive and defensive statistics, analyzed each of their p-values, and compared them to 0.05 to see if they had a statistically significant relationship on our primary variable of “Wins.”  
-
-Read in the data
-data2013 <- read.csv("/Users/drewlippert/Downloads/COLLEGEFOOTBALLDATA/cfb13.csv")
-
-Shows data in R
-view(data2013)
-
-Linear Regression Model 
-model1 <- lm(Win ~ Pass.Yards + Pass.Yards.Per.Game + Pass.Touchdowns + Rush.Yds + Rushing.Yards.per.Game + Rushing.TD + Avg.Points.per.Game.Allowed + Opp.Pass.TDs.Allowed + Opp.Rush.Touchdowns.Allowed, data = data2013)
-
-summary(model1)
 
 This figure above is a linear regression model of 2013 offensive and defensive statistics.  First, “Pass.Yards” represents a team’s total passing yards for the entirety of the season, and its p-value of 0.95131 shows that there is not a significant relationship between it and a team’s wins.  “Pass.Yards.Per.Game” represents the average passing yards on a “per-game” basis, and its p-value of 0.81053 tells us that it doesn’t make a significant impact on our wins variable.  “Pass.Touchdowns” describes the total number of passing touchdowns thrown in the entirety of the season, and its p-value of 0.00549 shows us that there is a positive statistical significance between passing touchdowns and wins, unlike the previous two explanatory variables.  “Rush.Yds” tells us the total number of yards by rushing in a given season, and its p-value of 0.00495 also tells us that there is a significant relationship between wins and total, team rushing yards.   “Rushing.Yards.Per.Game,” similar to the previous variable, describes rushing yards, but instead, in the form of a “per-game” basis.  It has a p-value of 0.00752, which shows that there is a positive relationship between it and a team’s wins because of its being greater than 0.05.  “Rushing TDs,” similar to “Pass.Touchdowns,” tells us the total number of rushing touchdowns, and its p-value of 0.00218 tells us there is a positive impact in wins.  This makes sense because anytime that you are scoring touchdowns is going to leave a positive impact and heighten your chances of winning.
 	
