@@ -1,1 +1,11 @@
+git clone https://github.com/your-username/your-repository.git
+cd your-repository
+
+cp C:/Users/17248/Documents/cfb*.csv .
+
+git add cfb23.csv cfb22.csv cfb21.csv cfb20.csv cfb19.csv cfb18.csv cfb17.csv cfb16.csv cfb15.csv cfb14.csv cfb13.csv
+
+git commit -m "Add college football datasets"
+
+git push origin main
 
