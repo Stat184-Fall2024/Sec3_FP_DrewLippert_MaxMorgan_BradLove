@@ -1,13 +1,15 @@
+## Reads in the data from 2013
 data2013 <- read.csv("/Users/drewlippert/Downloads/COLLEGEFOOTBALLDATA/cfb13.csv")
 
+## Creates linear regression model of key offensive and defensive stats from 2013
 model1 <- lm(Win ~ Pass.Yards + Pass.Yards.Per.Game + Pass.Touchdowns + Rush.Yds + Rushing.Yards.per.Game + Rushing.TD + Avg.Points.per.Game.Allowed + Opp.Pass.TDs.Allowed + Opp.Rush.Touchdowns.Allowed, data = data2013)
 summary(model1)
 
 
-
+## Reads in the data from 2020
 data2020 <- read.csv("/Users/drewlippert/Downloads/COLLEGEFOOTBALLDATA/cfb20.csv")
 
-
+## Creates plot of offensive yards per game by wins in 2013
 library(ggplot2)
 
 ggplot(data = data2013, aes(x = Off.Yards.per.Game, y = Win)) +
@@ -20,13 +22,10 @@ ggplot(data = data2013, aes(x = Off.Yards.per.Game, y = Win)) +
     ) +
   theme_minimal()
 
+## Reads in 2023 data
 data2023 <- read.csv("/Users/drewlippert/Downloads/COLLEGEFOOTBALLDATA/cfb23.csv")
-## data2023 <- data2023[-131, ]
 
-## model2 <- lm(Win.Loss ~ Pass.Yards + Pass.Yards.Per.Game + Pass.Touchdowns + Rush.Yds + Rushing.Yards.per.Game + Rushing.TD + Avg.Points.per.Game.Allowed + Opp.Pass.TDs.Allowed + Opp.Rush.Touchdowns.Allowed, data = data2023)
-## summary(model2)
-
-
+## Creates plot of average offensive yards per game by a team's wins and losses in 2023
 library(ggplot2)
 
 ggplot(data = data2023, aes(x = Off.Yards.per.Game, y = Win.Loss)) +
@@ -38,9 +37,7 @@ ggplot(data = data2023, aes(x = Off.Yards.per.Game, y = Win.Loss)) +
     ) +
   theme_minimal()
 
-
-
-
+## Creates plot of 2013 defensive stats by wins 
 library(ggplot2)
 
 ggplot(data = data2013, aes(x = Def.Rank, y = Win)) +
@@ -53,6 +50,7 @@ ggplot(data = data2013, aes(x = Def.Rank, y = Win)) +
     ) +
   theme_minimal()
 
+## Creates plot of defensive rank by wins and losses in 2023
 library(ggplot2)
 
 ggplot(data = data2023, aes(x = Def.Rank, y = Win.Loss)) +
