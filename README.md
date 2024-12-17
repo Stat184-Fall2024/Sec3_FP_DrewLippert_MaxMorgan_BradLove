@@ -2,13 +2,13 @@
 
 # Analysis of College Football Play-Style Over Time
 
-INTRODUCTION AND PURPOSE
+# INTRODUCTION AND PURPOSE
 
 In America, College Football has time and time again filled our fall Saturdays with numerous excitements of rooting on our alma maters, giving us the feeling that we are somehow a part of the team.  Over time, however, the game has changed.  NIL and Power 5 conference teams dominate, while intricacies of offensive and defensive possessions have changed to a game script developing more points than ever before.  
 
 In this report, we will show exactly how the game has changed, using offensive statistics from various teams over the past 10 years, 2013 to 2023, to be specific.  All attributes that we will be using are found in the various datasets provided by our Kaggle source.  In using different variables, such as Offensive Time of Possession, and Passing / Rushing Attempts, we hope to clearly see a relationship.  Overall, we will be asking this question, in hopes of finding an answer: How has the overall playstyle of college football evolved over the past decade?
 
-LITERARY REVIEW
+# LITERARY REVIEW
 
 In looking at how college football now favors offensive schemes, we can first look at the new offensive rules implemented this season.  Instead of prolonging games that drag up scores and involve more offensive plays to be run, college overtime now consists of two-point conversions after the second touchdown scored by either team, allowing games to finish quicker, while also allowing teams to run plays that do not affect the entirety of their stat sheet.  
 
@@ -22,13 +22,13 @@ Additionally, the 2021 playoffs found two of the teams being the University of G
 
 Even in looking at our data pool from the most recent championship season of 2023, the National Champions of the University of Michigan had a overall offensive rank of 66 in the country, but had the #1 defense in terms of rank.  This directly, and very recently, provides ample evidence that strong defenses have made a comeback.  On the other hand, in looking at this same dataset, a team like the University of North Texas had an offensive rank of 6 in the country, while their defensive rank was 130, almost dead-last.  Their record:  5-7, with no chance of making the College Football Playoffs.  
 
-FAIR AND CARE PRINICIPLES
+# FAIR AND CARE PRINICIPLES
 
 In looking at how our data correlate with the FAIR and CARE principles, we can first look at how the data was accessed.  FAIR principles state that the data must be easy for anyone to find, and can be reused by anyone who wishes to do the same data analysis that we are currently doing.  In this way, our data is extremely accessible.  We easily got our college football data from Kaggle, who made it incredibly easy to download and analyze the statistics.  
 
 Additionally, the CARE principles say that there must be some form of ethics in the way that the data was collected to be shared.  To our knowledge, there has been nothing wrong with anything regarding data format and collection mechanisms, making it a very strong candidate for our data analysis.
 
-THE 'HOWS'
+# THE 'HOWS'
 
 In order to properly show how college football has changed over the past years, we chose to use data that analyzes each FBS team’s statistics on both offense, as well as defense.  Such variables that we will be looking at our, as follows: 
 OFFENSE:
@@ -48,11 +48,11 @@ GRAPHS
 
 2020
 
-FIRST ANALYSIS 
+# ANALYSIS 
 
 In looking at these similar graphs, we see that we are analyzing a team’s success based on offensive yards.  At first glance, it is very evident that, while there is obviously a positive correlation between wins and offensive efficiency, we see that, in 2011, offense played a larger role in these victories.  In comparison, 2023 saw a significant decrease in relationship between the two variables.  We can conclude, based on these figures, that offense played less of a role in obtaining the same number of wins in 2023 than it did in 2011.  
 
-LINEAR REGRESSION
+# LINEAR REGRESSION
 
 In this portion of our analysis, we completed linear regression models for offensive and defensive statistics, analyzed each of their p-values, and compared them to 0.05 to see if they had a statistically significant relationship on our primary variable of “Wins.”  
 
@@ -73,7 +73,7 @@ Secondly, the last three variables in the table above from 2013 are defensive st
 
 Overall, this analysis of 2013 tells us that there is a heavy emphasis on good offenses, especially good passing and rushing schemes, which are vital for a team's success in the form of wins.  This aligns with our original theory from our “Literary Review” section that explained how offensive “spread” playstyles made up a good portion of the 2000s and into the 2010s, which fits into our 2013 timeline.  However, as we will see, defenses had to adapt to these explosive playstyles, and combat them with harder defensive play.
 
-WORKS CITED
+# WORKS CITED
 
 “College Football Defenses Finally Claw Back as Some Offensive Averages Reach Lowest Points in a Decade.” CBSSports.com, 2022, www.cbssports.com/college-  football/news/college-football-defenses-finally-claw-back-as-some-offensive-averages-reach-lowest-points-in-a-decade/. Accessed 13 Dec. 2024.
 
@@ -81,4 +81,4 @@ WORKS CITED
 
 GoRout. “NCAA Rules Changes and Updates over Time.” GoRout, 23 Apr. 2024, gorout.com/ncaa-rules/. Accessed 11 Dec. 2024.
 
-## Union, Student. “The Evolution of Offense: How Spread Formations Revolutionized College Football - Student Union Sports.” Student Union Sports, Dec. 2024, studentunionsports.com/the-evolution-of-offense-how-spread-formations-revolutionized-college-football/. Accessed 13 Dec. 2024.
+Union, Student. “The Evolution of Offense: How Spread Formations Revolutionized College Football - Student Union Sports.” Student Union Sports, Dec. 2024, studentunionsports.com/the-evolution-of-offense-how-spread-formations-revolutionized-college-football/. Accessed 13 Dec. 2024.
