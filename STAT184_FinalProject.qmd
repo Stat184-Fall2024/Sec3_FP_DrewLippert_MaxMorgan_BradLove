@@ -89,11 +89,10 @@ ggplot(data = data2023, aes(x = Off.Yards.per.Game, y = Win.Loss)) +
   theme_minimal()
 ```
 
-## First Analysis
+## First Analysis (Offense)
 
 In looking at these similar graphs, we see that we are analyzing a team’s success based on offensive yards.  At first glance, it is very evident that, while there is obviously a positive correlation between wins and offensive efficiency, we see that, in 2011, offense played a larger role in these victories.  In comparison, 2023 saw a significant decrease in relationship between the two variables.  We can conclude, based on these figures, that offense played less of a role in obtaining the same number of wins in 2023 than it did in 2011.  
 
-## Second Analysis (Defense)
 
 ```{r}
 library(ggplot2)
@@ -133,7 +132,7 @@ data2020$Season <- "2020"
 cfb_combined <- rbind(data2013 %>% select(Team, Yards.Allowed, Points.Allowed, Season),
                       data2020 %>% select(Team, Yards.Allowed, Points.Allowed, Season))
 
-# 1. Scatter Plot: Yards Allowed vs Points Allowed
+Scatter Plot: Yards Allowed vs Points Allowed
 ggplot(cfb_combined, aes(x = Yards.Allowed, y = Points.Allowed, color = Season)) +
   geom_point(alpha = 0.7) +
   labs(title = "Yards Allowed vs Points Allowed",
@@ -141,8 +140,7 @@ ggplot(cfb_combined, aes(x = Yards.Allowed, y = Points.Allowed, color = Season))
        y = "Points Allowed",
        color = "Season") +
   theme_minimal()
-
-# 2. Box Plot: Points Allowed for High vs Low Yards Allowed
+Box Plot: Points Allowed for High vs Low Yards Allowed
 cfb_combined <- cfb_combined %>%
   group_by(Season) %>%
   mutate(Yards.Group = ifelse(Yards.Allowed > median(Yards.Allowed), "High Yards Allowed", "Low Yards Allowed"))
@@ -155,6 +153,11 @@ ggplot(cfb_combined, aes(x = Yards.Group, y = Points.Allowed, fill = Season)) +
        fill = "Season") +
   theme_minimal()
 ```
+## Second Analysis (Defense)
+In this analysis, we examine how defensive performance, measured by Points Allowed, varies based on the number of Yards Allowed by teams in two different seasons: 2013 and 2020. By splitting teams into two groups—High Yards Allowed and Low Yards Allowed—we can evaluate how yards allowed impact points given up and how this relationship may have shifted over time.
+The graph clearly shows noticeable differences between the two seasons. In 2013, teams that allowed a higher number of yards also tended to allow significantly more points. The spread of points allowed for this group was larger, indicating less consistent defensive performance. Conversely, teams in the Low Yards Allowed group performed better defensively but with a wider range of points allowed compared to 2020.
+In 2020, defensive efficiency is markedly improved across both groups. Teams that allowed high yards still performed better than their 2013 counterparts, as shown by a lower median and reduced variability in points allowed. For teams in the Low Yards Allowed group, the relationship was even stronger: fewer points were allowed, and the spread was narrower, suggesting more consistent defensive success.
+This comparison highlights a shift in defensive effectiveness over time. While yards allowed has historically been a strong predictor of points allowed, teams in 2020 appear to have been better at limiting points, even when giving up a high number of yards. This could reflect improvements in defensive schemes, coaching, or individual player performance. As a result, the relationship between yards allowed and points allowed has weakened, indicating that defenses in 2020 were more resilient overall.
 
 ## Works Cited
 
