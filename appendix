@@ -95,6 +95,20 @@ ggplot(cfb_combined, aes(x = Yards.Group, y = Points.Allowed, fill = Season)) +
        fill = "Season") +
   theme_minimal()
 
+## Creates table of offensive and defensive stats, showing decrease in offense over time, and increase in defense over time
+mean_2013 <- c(off1 = 406.8, def2 = 395.4)
+mean_2018 <- c(off1 = 405.4, def2 = 393.8)
+mean_2023 <- c(off1 = 384.2, def2 = 372.5)
+  
+mean_table <- data.frame(
+  year = c(2013, 2018, 2023),
+  YardsPerGame = c(mean_2013["off1"], mean_2018["off1"], mean_2023["off1"]),
+  YardsPerGameAlowed = c(mean_2013["def2"], mean_2018["def2"], mean_2023["def2"])
+)
+
+print(mean_table)
+
+
 
 
 
