@@ -32,6 +32,7 @@ In looking at how our data correlate with the FAIR and CARE principles, we can f
 Additionally, the CARE principles say that there must be some form of ethics in the way that the data was collected to be shared.  To our knowledge, there has been nothing wrong with anything regarding data format and collection mechanisms, making it a very strong candidate for our data analysis.
 
 ```{r}
+#|echo: false
 data2013 <- read.csv("/Users/drewlippert/Downloads/COLLEGEFOOTBALLDATA/cfb13.csv")
 
 model1 <- lm(Win ~ Pass.Yards + Pass.Yards.Per.Game + Pass.Touchdowns + Rush.Yds + Rushing.Yards.per.Game + Rushing.TD + Avg.Points.per.Game.Allowed + Opp.Pass.TDs.Allowed + Opp.Rush.Touchdowns.Allowed, data = data2013)
@@ -39,6 +40,7 @@ summary(model1)
 ```
 
 ```{r}
+#|echo: false
 data2020 <- read.csv("/Users/drewlippert/Downloads/COLLEGEFOOTBALLDATA/cfb20.csv")
 ```
 
@@ -63,6 +65,7 @@ DEFENSE: Average Points Per Game Allowed, Touchdowns Allowed
 In analyzing these metrics and comparing them to different years, we will be able to see how these statistics changed over time. 
 
 ```{r}
+#|echo: false
 library(ggplot2)
 
 ggplot(data = data2013, aes(x = Off.Yards.per.Game, y = Win)) +
@@ -77,6 +80,7 @@ ggplot(data = data2013, aes(x = Off.Yards.per.Game, y = Win)) +
 ```
 
 ```{r}
+#|echo: false
 library(ggplot2)
 
 ggplot(data = data2023, aes(x = Off.Yards.per.Game, y = Win.Loss)) +
@@ -95,6 +99,7 @@ In looking at these similar graphs, we see that we are analyzing a team’s succ
 
 
 ```{r}
+#|echo: false
 library(ggplot2)
 
 ggplot(data = data2013, aes(x = Def.Rank, y = Win)) +
@@ -109,6 +114,7 @@ ggplot(data = data2013, aes(x = Def.Rank, y = Win)) +
 ```
 
 ```{r}
+#|echo: false
 library(ggplot2)
 
 ggplot(data = data2023, aes(x = Def.Rank, y = Win.Loss)) +
@@ -122,6 +128,7 @@ ggplot(data = data2023, aes(x = Def.Rank, y = Win.Loss)) +
 ```
 
 ```{r}
+#|echo: false
 library(readr)
 library(ggplot2)
 library(dplyr)
@@ -175,5 +182,6 @@ Union, Student. “The Evolution of Offense: How Spread Formations Revolutionize
 Student Union Sports.” Student Union Sports, Dec. 2024, studentunionsports.com/the-
 evolution-of-offense-how-spread-formations-revolutionized-college-football/. Accessed 13 Dec. 
 2024.
-
+```{r codeAppend, ref.label=knitr::all_labels(), echo=TRUE, eval=FALSE}
+```
 
