@@ -2,7 +2,7 @@
 
 # Analysis of College Football Play-Style Over Time
 
-# INTRODUCTION AND PURPOSE
+INTRODUCTION AND PURPOSE
 
 ## In America, College Football has time and time again filled our fall Saturdays with numerous excitements of rooting on our alma maters, giving us the feeling that we are somehow a part of the team.  Over time, however, the game has changed.  NIL and Power 5 conference teams dominate, while intricacies of offensive and defensive possessions have changed to a game script developing more points than ever before.  
 
